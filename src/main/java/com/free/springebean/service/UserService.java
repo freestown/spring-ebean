@@ -23,11 +23,11 @@ public class UserService {
         }
 
         User user = userOptional.get();
-        UserDto userDto = new UserDto();
-        userDto.setName(user.getName());
-        userDto.setAge(user.getAge());
-        userDto.setGender(user.getGender());
-        return userDto;
+        return UserDto.builder()
+                .name(user.getName())
+                .age(user.getAge())
+                .gender(user.getGender())
+                .build();
     }
 
     public void createUser(UserDto userDto) {
