@@ -1,0 +1,10 @@
+ebean:
+  dbScheme: spring_demo
+  migration:
+    run: true       # run database migrations on startup
+
+datasource:
+  url: jdbc:mysql://127.0.0.1:3306/spring_ebean
+  username: root
+  password: 123456
+  driver-class-name: com.mysql.cj.jdbc.Driver
