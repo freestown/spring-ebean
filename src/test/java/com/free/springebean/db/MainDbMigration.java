@@ -15,7 +15,7 @@ import java.io.IOException;
  * @date 2024/9/25 20:54
  */
 @SpringBootTest
-@ActiveProfiles("dev")
+@ActiveProfiles("default")
 public class MainDbMigration {
 
     @Test
@@ -25,7 +25,7 @@ public class MainDbMigration {
         DbMigration dbMigration = DbMigration.create();
         dbMigration.setPlatform(Platform.MYSQL);
         dbMigration.setVersion("1.1");
-        dbMigration.setName("2024-09-05");
+        dbMigration.setName("init");
         dbMigration.setStrictMode(true);
         dbMigration.generateMigration();
     }

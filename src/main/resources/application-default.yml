@@ -1,6 +1,7 @@
 ebean:
   dbScheme: spring_demo
   migration:
+
     run: true       # run database migrations on startup
 
 datasource:

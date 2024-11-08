@@ -6,6 +6,7 @@ import io.ebean.annotation.WhenCreated;
 import io.ebean.annotation.WhenModified;
 import io.ebean.annotation.WhoCreated;
 import io.ebean.annotation.WhoModified;
+import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.Version;
@@ -32,9 +33,11 @@ public class BaseDomain extends Model {
     private Long version;
 
     @WhenCreated
+    @Column(columnDefinition="datetime(0)")
     private Date whenCreated;
 
     @WhenModified
+    @Column(columnDefinition="datetime(0)")
     private Date whenModified;
 
     @WhoCreated
