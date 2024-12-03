@@ -36,3 +36,5 @@ target/
 *.iml
 logs/
 .mvn
+
+*.yml

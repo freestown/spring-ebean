@@ -7,12 +7,18 @@ ebean:
 datasource:
   url: jdbc:mysql://127.0.0.1:3306/spring_ebean?useUnicode=true&characterEncoding=utf8
   username: root
-  password: 123456
+  password:
   driver-class-name: com.mysql.cj.jdbc.Driver
 
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone:
     register-with-eureka: true
     fetch-registry: true
+
+spring:
+  ai:
+    qianfan:
+      api-key:
+      secret-key:
