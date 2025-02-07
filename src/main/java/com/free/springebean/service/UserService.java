@@ -4,7 +4,9 @@ import com.free.springebean.dto.UserDto;
 import com.free.springebean.entity.user.User;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * 描述
@@ -37,5 +39,27 @@ public class UserService {
         user.setGender(userDto.getGender());
 
         user.save();
+    }
+
+    public void deleteUser(Long id) {
+        User.finder.deleteById(id);
+    }
+
+    public void updateUser(UserDto userDto) {
+        User user = new User();
+        user.setId(userDto.getId());
+        user.setName(userDto.getName());
+        user.setAge(userDto.getAge());
+        user.setGender(userDto.getGender());
+
+        user.update();
+    }
+
+    public List<UserDto> findList() {
+        List<User> all = User.finder.all();
+        return all.stream().map(user -> UserDto.builder()
+                .name(user.getName())
+                .age(user.getAge()).build())
+                .collect(Collectors.toList());
     }
 }

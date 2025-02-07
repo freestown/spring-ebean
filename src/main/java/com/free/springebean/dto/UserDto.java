@@ -22,4 +22,6 @@ public class UserDto {
     private Integer age;
 
     private Integer gender;
+
+    private Long id;
 }
